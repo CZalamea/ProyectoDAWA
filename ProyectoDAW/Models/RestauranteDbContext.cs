@@ -4,6 +4,8 @@ namespace ProyectoDAW.Models
 {
     public class RestauranteDbContext : DbContext
     {
+        
+
         public RestauranteDbContext(DbContextOptions <RestauranteDbContext> options) : base(options)
         {
             
@@ -19,9 +21,6 @@ namespace ProyectoDAW.Models
         public DbSet <Resena> resenas { get; set; }
         public DbSet <Usuario> usuarios { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True");
-        }
+       
     }
 }

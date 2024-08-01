@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 
@@ -13,6 +14,8 @@ namespace ProyectoDAW.Models
         public Categoria categoria { get; set; }
         public string ProductoNombre { get; set; }
         public string ProductoDescripcion { get; set; }
+
+        [Precision(18, 2)]
         public decimal ProductoPrecio { get; set; }
         public bool ProductoEstado { get; set; }
 

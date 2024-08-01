@@ -1,4 +1,5 @@
-﻿using ProyectoDAW.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoDAW.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,6 +12,8 @@ namespace ProyectoDAW.Models
 
         [ForeignKey("ProductoId")]
         public Producto producto { get; set; }
+
+        [Precision(18, 2)]
         public decimal precioCarrito { get; set; }
         public EstadoCarritoEnum estadoCarritoEnum { get; set; }
     }

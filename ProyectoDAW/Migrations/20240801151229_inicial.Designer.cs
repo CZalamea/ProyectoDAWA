@@ -11,8 +11,8 @@ using ProyectoDAW.Models;
 namespace ProyectoDAW.Migrations
 {
     [DbContext(typeof(RestauranteDbContext))]
-    [Migration("20240625181118_MasCorreciones")]
-    partial class MasCorreciones
+    [Migration("20240801151229_inicial")]
+    partial class inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,7 @@ namespace ProyectoDAW.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("precioCarrito")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CarritoId");
@@ -91,6 +92,7 @@ namespace ProyectoDAW.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("subtotal")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CompraId");
@@ -114,12 +116,14 @@ namespace ProyectoDAW.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("IvaFactura")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("PagoId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("TotalFactura")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("UsuarioId")
@@ -149,6 +153,7 @@ namespace ProyectoDAW.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PagoId"));
 
                     b.Property<decimal>("MontoPago")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("metodoPago")
@@ -219,6 +224,7 @@ namespace ProyectoDAW.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("ProductoPrecio")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ProductoId");

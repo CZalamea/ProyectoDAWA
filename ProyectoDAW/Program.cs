@@ -3,11 +3,12 @@ using ProyectoDAW.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<RestauranteDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Conexion"));
-});
+
 // Add services to the container.
+var conecctionString = builder.Configuration.GetConnectionString("Conexion");
+builder.Services.AddDbContext<RestauranteDbContext>(options =>
+    options.UseSqlServer(conecctionString)
+);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

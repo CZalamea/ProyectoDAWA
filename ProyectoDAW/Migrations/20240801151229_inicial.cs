@@ -5,7 +5,7 @@
 namespace ProyectoDAW.Migrations
 {
     /// <inheritdoc />
-    public partial class CreacionInicial : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,7 @@ namespace ProyectoDAW.Migrations
                     PagoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     metodoPago = table.Column<int>(type: "int", nullable: false),
-                    MontoPago = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    MontoPago = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -84,7 +84,7 @@ namespace ProyectoDAW.Migrations
                     CategoriaId = table.Column<int>(type: "int", nullable: false),
                     ProductoNombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductoDescripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductoPrecio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ProductoPrecio = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     ProductoEstado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -126,7 +126,7 @@ namespace ProyectoDAW.Migrations
                     CarritoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductoId = table.Column<int>(type: "int", nullable: false),
-                    precioCarrito = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    precioCarrito = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     estadoCarritoEnum = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -148,7 +148,7 @@ namespace ProyectoDAW.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CarritoId = table.Column<int>(type: "int", nullable: false),
-                    subtotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    subtotal = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     estado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -177,8 +177,8 @@ namespace ProyectoDAW.Migrations
                     UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CompraId = table.Column<int>(type: "int", nullable: false),
                     PagoId = table.Column<int>(type: "int", nullable: false),
-                    IvaFactura = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TotalFactura = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    IvaFactura = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    TotalFactura = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     estadoFactura = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -189,13 +189,13 @@ namespace ProyectoDAW.Migrations
                         column: x => x.CompraId,
                         principalTable: "compras",
                         principalColumn: "CompraId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_facturacions_pagos_PagoId",
                         column: x => x.PagoId,
                         principalTable: "pagos",
                         principalColumn: "PagoId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_facturacions_usuarios_UsuarioId",
                         column: x => x.UsuarioId,

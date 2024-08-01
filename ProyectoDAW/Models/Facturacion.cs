@@ -22,8 +22,11 @@ namespace ProyectoDAW.Models
         public Pago Pago { get; set; }
         public int PagoId { get; set; }
 
+        [Precision(18, 2)]
         public decimal IvaFactura { get; set; }
+        [Precision(18, 2)]
         public decimal TotalFactura { get; set; }
+
         public bool estadoFactura { get; set; }
     }
 }
