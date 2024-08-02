@@ -10,7 +10,8 @@ namespace ProyectoDAW.Models
         public int ResenaId { get; set; }
 
         [ForeignKey("UsuarioId")]
-        public Usuario Usuario { get; set; }    
+        public Usuario Usuario { get; set; }  
+        public int UsuarioId { get; set; }
         public ResenaEnum resenaEnum { get; set; }
         public String Comentario { get; set; }
     }

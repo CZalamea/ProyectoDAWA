@@ -11,8 +11,8 @@ using ProyectoDAW.Models;
 namespace ProyectoDAW.Migrations
 {
     [DbContext(typeof(RestauranteDbContext))]
-    [Migration("20240801151229_inicial")]
-    partial class inicial
+    [Migration("20240802224901_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,9 +84,8 @@ namespace ProyectoDAW.Migrations
                     b.Property<int>("CarritoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UsuarioId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("estado")
                         .HasColumnType("bit");
@@ -126,9 +125,8 @@ namespace ProyectoDAW.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("UsuarioId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("estadoFactura")
                         .HasColumnType("bit");
@@ -246,9 +244,8 @@ namespace ProyectoDAW.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UsuarioId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
 
                     b.Property<int>("resenaEnum")
                         .HasColumnType("int");
@@ -262,8 +259,11 @@ namespace ProyectoDAW.Migrations
 
             modelBuilder.Entity("ProyectoDAW.Models.Usuario", b =>
                 {
-                    b.Property<string>("UsuarioId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsuarioId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
 
                     b.Property<string>("UsuarioApellido")
                         .IsRequired()

@@ -12,7 +12,7 @@ namespace ProyectoDAW.Models
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }
-        public string UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
 
         [ForeignKey("CompraId")]
         public Compra Compra { get; set; }

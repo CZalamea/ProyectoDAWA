@@ -11,6 +11,7 @@ namespace ProyectoDAW.Models
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
 
         [ForeignKey("CarritoId")]
         public Carrito carrito { get; set; }

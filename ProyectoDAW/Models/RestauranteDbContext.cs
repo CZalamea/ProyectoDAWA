@@ -21,6 +21,18 @@ namespace ProyectoDAW.Models
         public DbSet <Resena> resenas { get; set; }
         public DbSet <Usuario> usuarios { get; set; }
 
-       
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Resena>()
+                .HasOne(r => r.Usuario)
+                .WithMany()
+                .HasForeignKey(r => r.UsuarioId);
+
+            modelBuilder.Entity<Facturacion>()
+                .HasOne(f => f.Usuario)
+                .WithMany()
+                .HasForeignKey(f => f.UsuarioId);
+        }
+
     }
 }

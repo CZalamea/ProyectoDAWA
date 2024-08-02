@@ -5,7 +5,7 @@
 namespace ProyectoDAW.Migrations
 {
     /// <inheritdoc />
-    public partial class inicial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -61,7 +61,8 @@ namespace ProyectoDAW.Migrations
                 name: "usuarios",
                 columns: table => new
                 {
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UsuarioNombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UsuarioApellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UsuarioEmail = table.Column<string>(type: "nvarchar(254)", maxLength: 254, nullable: false),
@@ -104,7 +105,7 @@ namespace ProyectoDAW.Migrations
                 {
                     ResenaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
                     resenaEnum = table.Column<int>(type: "int", nullable: false),
                     Comentario = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -146,7 +147,7 @@ namespace ProyectoDAW.Migrations
                 {
                     CompraId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
                     CarritoId = table.Column<int>(type: "int", nullable: false),
                     subtotal = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     estado = table.Column<bool>(type: "bit", nullable: false)
@@ -174,7 +175,7 @@ namespace ProyectoDAW.Migrations
                 {
                     FacturaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
                     CompraId = table.Column<int>(type: "int", nullable: false),
                     PagoId = table.Column<int>(type: "int", nullable: false),
                     IvaFactura = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
