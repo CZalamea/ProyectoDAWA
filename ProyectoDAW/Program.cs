@@ -1,7 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using ProyectoDAW.Models;
+using ProyectoDAW.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//otros servicios
+builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ICompraRepository, CompraRepository>();
+builder.Services.AddScoped<IFacturacionRepository, FacturacionRepository>();
+builder.Services.AddScoped<IPagoRepository, PagoRepository>();
+builder.Services.AddScoped<IPerfilRepository, PerfilRepository>();
+builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+builder.Services.AddScoped <IReseñaRepository, ResenaRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
 
 
 // Add services to the container.
