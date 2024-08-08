@@ -20,6 +20,8 @@ namespace ProyectoDAW.Models
         public DbSet <Producto> productos { get; set; }
         public DbSet <Resena> resenas { get; set; }
         public DbSet <Usuario> usuarios { get; set; }
+        public DbSet<Inventario> inventario { get; set; }
+        public DbSet<Proveedor> proveedor { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

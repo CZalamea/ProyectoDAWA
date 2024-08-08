@@ -1,6 +1,6 @@
 ﻿namespace ProyectoDAW.Enums
 {
-    public enum MeteodoPagoEnum
+    public enum MetodoPagoEnum
     {
         TarjetaCredito,
         TarjetaDebito,

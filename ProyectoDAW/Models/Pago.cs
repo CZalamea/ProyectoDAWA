@@ -9,10 +9,8 @@ namespace ProyectoDAW.Models
     {
         [Key]
         public int PagoId { get; set; }
-        public MeteodoPagoEnum metodoPago { get; set; }
+        public MetodoPagoEnum metodoPago { get; set; }
         [Precision(18, 2)]
         public decimal MontoPago { get; set; }
-
-
     }
 }

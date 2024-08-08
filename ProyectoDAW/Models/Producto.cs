@@ -10,6 +10,8 @@ namespace ProyectoDAW.Models
         [Key]
         public int ProductoId { get; set; }
 
+        public int CategoriaId { get; set; }
+
         [ForeignKey("CategoriaId")]
         public Categoria categoria { get; set; }
         public string ProductoNombre { get; set; }

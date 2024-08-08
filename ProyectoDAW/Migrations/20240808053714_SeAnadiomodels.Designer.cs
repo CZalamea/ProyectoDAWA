@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoDAW.Models;
 
@@ -10,9 +11,11 @@ using ProyectoDAW.Models;
 namespace ProyectoDAW.Migrations
 {
     [DbContext(typeof(RestauranteDbContext))]
-    partial class RestauranteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240808053714_SeAnadiomodels")]
+    partial class SeAnadiomodels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -33,7 +33,7 @@ namespace ProyectoDAW.Repository
             }
         }
 
-        public async Task<Usuario> GetUsuarioById(string id)
+        public async Task<Usuario> GetUsuarioById(int id)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace ProyectoDAW.Repository
             }
         }
 
-        public async Task<Usuario> DeleteUsuario(string id)
+        public async Task<Usuario> DeleteUsuario(int id)
         {
             try
             {

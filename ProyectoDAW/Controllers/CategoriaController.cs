@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProyectoDAW.Models;
 using ProyectoDAW.Repository;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ProyectoDAW.Controllers
 {
